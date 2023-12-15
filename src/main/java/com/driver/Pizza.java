@@ -4,7 +4,7 @@ public class Pizza {
 
     private int price;
     private Boolean isVeg;
-    private String bill = "";
+    private String bill;
 
     private boolean wantToppings;
 
@@ -14,7 +14,7 @@ public class Pizza {
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
-
+        bill = "";
         //initially, customer has not demanded anything
         this.wantToppings = false;
         this.wantExtraCheese = false;
