@@ -6,9 +6,24 @@ public class Pizza {
     private Boolean isVeg;
     private String bill;
 
+    private boolean wantToppings;
+
+    private boolean wantExtraCheese;
+
+    private boolean isTakeWay;
+
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
-        // your code goes here
+
+        //initially, customer has not demanded anything
+        this.wantToppings = false;
+        this.wantExtraCheese = false;
+        this.isTakeWay = false;
+        if(isVeg){
+            price = 300; // Base price of veg pizza
+        } else{
+            price = 400; // Base price of non veg pizza
+        }
     }
 
     public int getPrice(){
@@ -16,19 +31,49 @@ public class Pizza {
     }
 
     public void addExtraCheese(){
-        // your code goes here
+        if(!wantExtraCheese){
+            price += 80;
+        }
+        wantExtraCheese = true; // customer has already asked for the extra cheese. do not add anymore
     }
 
     public void addExtraToppings(){
-        // your code goes here
+        if(!wantToppings){
+            if(isVeg) price += 70; // for veg toppings cost : 70
+            else price += 120; // for non veg toppings cost : 120
+        }
+
+        wantToppings = true;
     }
 
     public void addTakeaway(){
-        // your code goes here
+        if(!isTakeWay) price += 20;
+
+        isTakeWay = true;
     }
 
     public String getBill(){
-        // your code goes here
+        if(isVeg){
+            bill = "Base Price for the Pizza: 300 \n";
+        } else {
+            bill = "Base Price for the Pizza: 400 \n";
+        }
+
+        if(wantExtraCheese){
+            bill += "Extra Cheese Added: 80 \n";
+        }
+
+        if(wantToppings){
+            if(isVeg) bill += "Extra Toppings Added: 70 \n";
+            else bill += "Extra Toppings Added: 120 \n";
+        }
+
+        if(isTakeWay){
+            bill += "PaperBag Added: 20 \n";
+        }
+
+        bill += "Total Price: "+price;
+
         return this.bill;
     }
 }
