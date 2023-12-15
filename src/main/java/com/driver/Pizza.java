@@ -54,9 +54,9 @@ public class Pizza {
 
     public String getBill(){
         if(isVeg){
-            bill = "Base Price Of The Pizza: 300\n";
+            bill += "Base Price Of The Pizza: 300\n";
         } else {
-            bill = "Base Price Of The Pizza: 400\n";
+            bill += "Base Price Of The Pizza: 400\n";
         }
 
         if(wantExtraCheese){
@@ -72,7 +72,7 @@ public class Pizza {
             bill += "Paperbag Added: 20\n";
         }
 
-        bill += "Total Price: "+price;
+        bill += "Total Price: "+price+"\n";
 
         return this.bill;
     }
