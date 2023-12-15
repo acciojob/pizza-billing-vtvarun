@@ -4,7 +4,7 @@ public class Pizza {
 
     private int price;
     private Boolean isVeg;
-    private String bill;
+    private String bill = "";
 
     private boolean wantToppings;
 
@@ -19,7 +19,7 @@ public class Pizza {
         this.wantToppings = false;
         this.wantExtraCheese = false;
         this.isTakeWay = false;
-        if(isVeg){
+        if(this.isVeg){
             price = 300; // Base price of veg pizza
         } else{
             price = 400; // Base price of non veg pizza
