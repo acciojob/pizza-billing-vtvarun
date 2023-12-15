@@ -69,7 +69,7 @@ public class Pizza {
         }
 
         if(isTakeWay){
-            bill += "PaperBag Added: 20 \n";
+            bill += "Paperbag Added: 20 \n";
         }
 
         bill += "Total Price: "+price;
